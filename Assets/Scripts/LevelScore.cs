@@ -7,6 +7,8 @@ public class LevelScore : MonoBehaviour
 {       
     [SerializeField] private Text scoreText;
     [SerializeField] private ProgressBar stars;
+    [SerializeField] private Button nextLevel;
+    [SerializeField] private Button finalScore;
 
     private SceneData sd;
 
@@ -55,6 +57,13 @@ public class LevelScore : MonoBehaviour
         scoreText.text = totalScore.ToString();
         int maxScore = opinionValues[FoodOpinion.Like] * collectedFood.Count;
         stars.currentFillBar = (int) (((float) totalScore/ (float) maxScore) * 100);
+
+        // Upload to SceneData
+        ScoreData currScore = new ScoreData();
+        currScore.score = totalScore;
+        currScore.maxScore = maxScore;
+        sd.levelScores.Add(sd.currCustomer, currScore);
+        sd.NextCustomer();
     }
 
 }
