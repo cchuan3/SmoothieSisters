@@ -61,6 +61,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject[] ids;
 
     [SerializeField] private GameMusic music;
+    [SerializeField] private AudioSource goodSound;
+    [SerializeField] private AudioSource badSound;
 
     private void Awake() {
         sd = GameObject.FindObjectOfType<SceneData>();
@@ -122,11 +124,24 @@ public class LevelManager : MonoBehaviour
 
     public void AddFood(FoodType food) {
         collectedFood.Add(food);
+
+        if ((int) foodPreferences[food] > 0)
+            GoodSound();
+        else 
+            BadSound();
+
         CalcCompletion();
         completionSlider.CurrentValue = completionPercent;
         if (completionPercent == 1) {
             EndLevel();
         }
+    }
+
+    private void GoodSound() {
+        goodSound.Play();
+    }
+    private void BadSound() {
+        badSound.Play();
     }
 
     private void Update() {
