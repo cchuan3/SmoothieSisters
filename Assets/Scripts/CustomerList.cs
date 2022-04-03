@@ -26,11 +26,9 @@ public class CustomerList
         cl.Add(temp);
     }
 
-    public Customer NextCustomer() {
-        Customer next = cl[0];
-        cl.RemoveAt(0);
-        return next;
+    public Customer CustomerAt(int i) {
+        if (i >= cl.Count) 
+            return cl[0];
+        return cl[i];
     }
-
-    public bool IsEmpty() => cl.Count == 0;
 }

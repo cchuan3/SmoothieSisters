@@ -66,7 +66,10 @@ public class LevelManager : MonoBehaviour
     }
     private GameState state;
 
+    private SceneData sd;
+
     private void Awake() {
+        sd = GameObject.FindObjectOfType<SceneData>();
         collectedFood = new List<FoodType>();
         cl = new CustomerList();
         cl.InitList();
@@ -78,7 +81,7 @@ public class LevelManager : MonoBehaviour
         CalcCompletion();
         NeutralScores();
         pm.ResetPreferences();
-        Customer temp = cl.NextCustomer();
+        Customer temp = cl.CustomerAt(sd.currCustomer);
         CurrCustomer = temp;
         scorePanel.SetActive(false);
         state = GameState.WaitForStart;
