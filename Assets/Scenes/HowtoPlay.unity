@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 129012428}
   - component: {fileID: 129012427}
   - component: {fileID: 129012426}
-  - component: {fileID: 129012431}
   m_Layer: 0
   m_Name: ButtonController
   m_TagString: Untagged
@@ -156,6 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94146a2b59a444ba0a91146779ef19d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicPlayerPrefab: {fileID: 0}
+  makeNewMusic: 0
   ToMainMenu: TitleScreen
 --- !u!114 &129012427
 MonoBehaviour:
@@ -209,19 +210,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &129012431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129012425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f89394e1cd4464c45baf094aaf819b52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenu: TitleScreen
 --- !u!1 &320755396
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,9 +293,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 129012431}
-        m_TargetAssemblyTypeName: ExittoMenu2, Assembly-CSharp
-        m_MethodName: exitToMainMenu
+      - m_Target: {fileID: 129012426}
+        m_TargetAssemblyTypeName: ExitToMenuScript, Assembly-CSharp
+        m_MethodName: ExitToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -718,7 +706,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210719623}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 70fbbfce7a0a14feca02a06a88c2a6ca, type: 3}

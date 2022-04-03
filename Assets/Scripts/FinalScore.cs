@@ -14,7 +14,7 @@ public class FinalScore : MonoBehaviour
     [SerializeField] private Sprite[] unsatisfiedSprites;
 
     private SceneData sd;
-    private bool satisfiedCustomers;
+    // private bool satisfiedCustomers;
     public Dictionary<int, ScoreData> levelScores;
 
     private void Awake() {
@@ -25,7 +25,7 @@ public class FinalScore : MonoBehaviour
     }
 
     private void CalcSatisfied() {
-        satisfiedCustomers = true;
+        // satisfiedCustomers = true;
         int totalScore = 0;
         foreach (KeyValuePair<int, ScoreData> level in levelScores) {
             int i = level.Key;
@@ -35,7 +35,7 @@ public class FinalScore : MonoBehaviour
                 customers[i].sprite = satisfiedSprites[i];
             }
             else {
-                satisfiedCustomers = false;
+                // satisfiedCustomers = false;
                 customers[i].sprite= unsatisfiedSprites[i];
             }
             totalScore += level.Value.score;
