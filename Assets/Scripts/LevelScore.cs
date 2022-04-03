@@ -6,12 +6,9 @@ using UnityEngine.UI;
 public class LevelScore : MonoBehaviour
 {       
     [SerializeField] private Text scoreText;
+    [SerializeField] private ProgressBar stars;
 
     private SceneData sd;
-
-    private void Start() {
-        sd = GameObject.FindObjectOfType<SceneData>();
-    }
 
     public List<FoodType> collectedFood;
     public Dictionary<FoodType, FoodOpinion> foodPreferences;
@@ -23,8 +20,10 @@ public class LevelScore : MonoBehaviour
     };
 
     private void Awake() {
+        sd = GameObject.FindObjectOfType<SceneData>();
         collectedFood = sd.collectedFood;
         foodPreferences = sd.foodPreferences;
+        CalcScore();
     }
 
     private void CalcScore() {
@@ -54,6 +53,8 @@ public class LevelScore : MonoBehaviour
         // neutralSlider.CurrentValue = sliderVal;
 
         scoreText.text = totalScore.ToString();
+        int maxScore = opinionValues[FoodOpinion.Like] * collectedFood.Count;
+        stars.currentFillBar = (int) (((float) totalScore/ (float) maxScore) * 100);
     }
 
 }
