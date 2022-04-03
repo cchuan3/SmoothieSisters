@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FinalScore : MonoBehaviour
 {
     [SerializeField] private Text scoreText;
-    [SerializeField] private Text congratsText;
+    // [SerializeField] private Text congratsText;
     [SerializeField] private ProgressBar[] stars;
     [SerializeField] private Image[] customers;
 
@@ -21,7 +21,7 @@ public class FinalScore : MonoBehaviour
         sd = GameObject.FindObjectOfType<SceneData>();
         levelScores = sd.levelScores;
         CalcSatisfied();
-        if (!satisfiedCustomers) congratsText.text = "Try again!";
+        // if (!satisfiedCustomers) congratsText.text = "Try again!";
     }
 
     private void CalcSatisfied() {

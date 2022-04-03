@@ -63,6 +63,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameMusic music;
     [SerializeField] private AudioSource goodSound;
     [SerializeField] private AudioSource badSound;
+    [SerializeField] private AnimalSoundPlayer animalSound;
 
     private void Awake() {
         sd = GameObject.FindObjectOfType<SceneData>();
@@ -78,6 +79,7 @@ public class LevelManager : MonoBehaviour
     }
 
     private void StartAnimation() {
+        animalSound.SetSounds(sd.currCustomer);
         ids[sd.currCustomer].SetActive(true);
         ids[sd.currCustomer].GetComponent<IDCard>().StartAnimation();
     }
@@ -125,7 +127,7 @@ public class LevelManager : MonoBehaviour
     public void AddFood(FoodType food) {
         collectedFood.Add(food);
 
-        if ((int) foodPreferences[food] > 0)
+        if (foodPreferences[food] == FoodOpinion.Like || foodPreferences[food] == FoodOpinion.Neutral)
             GoodSound();
         else 
             BadSound();
