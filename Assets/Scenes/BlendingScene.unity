@@ -536,7 +536,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983413826}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &983413828
 Camera:
   m_ObjectHideFlags: 0
@@ -726,6 +726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bowl: {fileID: 68293988}
   levelScoreScene: Level_Complete
+  musicPlayer: {fileID: 0}
   collectedFood: 
 --- !u!4 &1418130352
 Transform:
