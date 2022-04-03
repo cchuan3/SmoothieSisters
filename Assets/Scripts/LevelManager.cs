@@ -49,13 +49,14 @@ public class LevelManager : MonoBehaviour
         WaitForStart,
         InGame,
         Score,
-        EndGame
+        EndGame,
+        WaitForEnd
     }
     private GameState state;
 
     private SceneData sd;
 
-    [SerializeField] private string scoreScreen = "Level_Complete";
+    [SerializeField] private string blendingScene = "BlendingScene";
 
     private void Awake() {
         sd = GameObject.FindObjectOfType<SceneData>();
@@ -85,7 +86,7 @@ public class LevelManager : MonoBehaviour
         state = GameState.Score;
         sd.collectedFood = collectedFood;
         sd.foodPreferences = foodPreferences;
-        SceneManager.LoadScene(scoreScreen);
+        state = GameState.WaitForEnd;
     }
 
     private void CalcCompletion() {
@@ -113,6 +114,11 @@ public class LevelManager : MonoBehaviour
         if (state == GameState.WaitForStart) {
             if (Input.anyKey) {
                 StartLevel();
+            }
+        }
+        else if (state == GameState.WaitForEnd) {
+            if (Input.anyKey) {
+                SceneManager.LoadScene(blendingScene);
             }
         }
     }

@@ -725,7 +725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bowl: {fileID: 68293988}
   levelScoreScene: Level_Complete
-  collectedFood: 00000000010000000100000002000000000000000200000001000000020000000000000001000000
+  collectedFood: 
 --- !u!4 &1418130352
 Transform:
   m_ObjectHideFlags: 0

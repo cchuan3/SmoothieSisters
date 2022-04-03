@@ -13,8 +13,8 @@ public class Blending : MonoBehaviour
     private bool waiting;
     
     private void Awake() {
-        // sd = GameObject.FindObjectOfType<SceneData>();
-        // collectedFood = sd.collectedFood;
+        sd = GameObject.FindObjectOfType<SceneData>();
+        collectedFood = sd.collectedFood;
         bowl.collectedFood = collectedFood;
         bowl.StartAnimation();
         waiting = false;

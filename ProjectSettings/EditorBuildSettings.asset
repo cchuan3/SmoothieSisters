@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalScoreScene.unity
     guid: bca468cd5ff42a64c8e9a58225211e6b
+  - enabled: 1
+    path: Assets/Scenes/BlendingScene.unity
+    guid: 24ed552a401d4d449b14d855c3efcea5
   m_configObjects: {}
