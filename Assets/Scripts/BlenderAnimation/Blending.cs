@@ -32,6 +32,8 @@ public class Blending : MonoBehaviour
     }
 
     public void StartWaiting() {
+        Destroy(musicPlayer);
+        SceneManager.LoadScene(levelScoreScene);
         waiting = true;
     }
 
