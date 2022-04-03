@@ -60,6 +60,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private string blendingScene = "BlendingScene";
     [SerializeField] private GameObject[] ids;
 
+    [SerializeField] private GameMusic music;
+
     private void Awake() {
         sd = GameObject.FindObjectOfType<SceneData>();
         collectedFood = new List<FoodType>();
@@ -68,6 +70,7 @@ public class LevelManager : MonoBehaviour
         state = GameState.IDAnimation;
         pm.ResetPreferences();
         pm.setCustomer(sd.currCustomer);
+        music.SetMusic(sd.currCustomer);
         StartAnimation();
         // ResetLevel();
     }
