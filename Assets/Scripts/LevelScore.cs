@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class LevelScore : MonoBehaviour
-{       
+{
     [SerializeField] private Text scoreText;
     [SerializeField] private ProgressBar stars;
-    [SerializeField] private Button nextLevel;
-    [SerializeField] private Button finalScore;
+    [SerializeField] private GameObject nextLevel;
+    [SerializeField] private GameObject finalScore;
 
     private SceneData sd;
 
@@ -21,11 +21,18 @@ public class LevelScore : MonoBehaviour
         {FoodOpinion.Hate, -3}
     };
 
+    private int totalScore;
+
     private void Awake() {
         sd = GameObject.FindObjectOfType<SceneData>();
         collectedFood = sd.collectedFood;
         foodPreferences = sd.foodPreferences;
         CalcScore();
+
+        if (sd.currCustomer >= 3 || totalScore < 0) {
+            nextLevel.SetActive(false);
+            finalScore.SetActive(true);
+        }
     }
 
     private void CalcScore() {
@@ -35,7 +42,7 @@ public class LevelScore : MonoBehaviour
             {FoodOpinion.Dislike, 0f},
             {FoodOpinion.Hate, 0f}
         };
-        int totalScore = 0;
+        totalScore = 0;
         foreach (FoodType f in collectedFood) {
             FoodOpinion temp = foodPreferences[f];
             scoreCounts[temp]++;
@@ -56,13 +63,14 @@ public class LevelScore : MonoBehaviour
 
         scoreText.text = totalScore.ToString();
         int maxScore = opinionValues[FoodOpinion.Like] * collectedFood.Count;
-        stars.currentFillBar = (int) (((float) totalScore/ (float) maxScore) * 100);
+        int percentScore = (int) (((float) totalScore/ (float) maxScore) * 100);
+        stars.currentFillBar = percentScore;
 
         // Upload to SceneData
         ScoreData currScore = new ScoreData();
         currScore.score = totalScore;
-        currScore.maxScore = maxScore;
-        sd.levelScores.Add(sd.currCustomer, currScore);
+        currScore.percentScore = percentScore;
+        sd.levelScores[sd.currCustomer] = currScore;
         sd.NextCustomer();
     }
 

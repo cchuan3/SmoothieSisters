@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currCustomer: 0
+  collectedFood: 
+  maxScores: 1e0000002800000032000000
 --- !u!4 &1408121608
 Transform:
   m_ObjectHideFlags: 0

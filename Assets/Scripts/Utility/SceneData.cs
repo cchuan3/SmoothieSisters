@@ -7,6 +7,10 @@ public class SceneData : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this);
+        ResetGame();
+    }
+
+    public void ResetGame() {
         ResetCustomer();
         ResetScores();
     }
@@ -29,8 +33,15 @@ public class SceneData : MonoBehaviour
     // For final score scene
     public Dictionary<int, ScoreData> levelScores;
 
-    public void ResetScores() {
+    private void ResetScores() {
         levelScores = new Dictionary<int, ScoreData>();
+        
+        ScoreData temp = new ScoreData();
+        temp.score = 0;
+        temp.percentScore = 0;
+        levelScores.Add(0, temp);
+        levelScores.Add(1, temp);
+        levelScores.Add(2, temp);
     }
 
 
@@ -38,5 +49,5 @@ public class SceneData : MonoBehaviour
 
 public struct ScoreData {
     public int score;
-    public int maxScore;
+    public int percentScore;
 }
