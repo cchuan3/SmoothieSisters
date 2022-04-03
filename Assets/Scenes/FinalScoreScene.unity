@@ -1516,9 +1516,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 305589023}
-        m_TargetAssemblyTypeName: ExittoMenu2, Assembly-CSharp
-        m_MethodName: exitToMainMenu
+      - m_Target: {fileID: 305589022}
+        m_TargetAssemblyTypeName: ExitToMenuScript, Assembly-CSharp
+        m_MethodName: ExitToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
