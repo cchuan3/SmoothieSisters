@@ -30,6 +30,10 @@ public class DroppingFood : MonoBehaviour
         SetSprite(thisFood);
     }
 
+    public void SetType(FoodType type) {
+        thisFood = type;
+    }
+
     private void SetSprite(FoodType type) {
         SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
         sr.sprite = fs.GetSpriteOfType(type);
