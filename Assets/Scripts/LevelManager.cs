@@ -50,19 +50,34 @@ public class LevelManager : MonoBehaviour
         InGame,
         Score,
         EndGame,
-        WaitForEnd
+        WaitForEnd,
+        IDAnimation
     }
     private GameState state;
 
     private SceneData sd;
 
     [SerializeField] private string blendingScene = "BlendingScene";
+    [SerializeField] private GameObject[] ids;
 
     private void Awake() {
         sd = GameObject.FindObjectOfType<SceneData>();
         collectedFood = new List<FoodType>();
         cl = new CustomerList();
         cl.InitList();
+        state = GameState.IDAnimation;
+        pm.ResetPreferences();
+        pm.setCustomer(sd.currCustomer);
+        StartAnimation();
+        // ResetLevel();
+    }
+
+    private void StartAnimation() {
+        ids[sd.currCustomer].SetActive(true);
+        ids[sd.currCustomer].GetComponent<IDCard>().StartAnimation();
+    }
+
+    public void EndAnimation() {
         ResetLevel();
     }
 
@@ -73,7 +88,8 @@ public class LevelManager : MonoBehaviour
         pm.ResetPreferences();
         Customer temp = cl.CustomerAt(sd.currCustomer);
         CurrCustomer = temp;
-        state = GameState.WaitForStart;
+        // state = GameState.WaitForStart;
+        StartLevel();
     }
 
     private void StartLevel() {
