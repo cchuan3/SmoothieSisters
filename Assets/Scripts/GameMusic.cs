@@ -9,7 +9,7 @@ public class GameMusic : MonoBehaviour
 
     public void SetMusic(int currCustomer) {
         musicPlayer = gameObject.GetComponent<AudioSource>();
-        Debug.Log(currCustomer);
+        // Debug.Log(currCustomer);
         musicPlayer.clip = ingame[currCustomer];
         musicPlayer.Play();
     }

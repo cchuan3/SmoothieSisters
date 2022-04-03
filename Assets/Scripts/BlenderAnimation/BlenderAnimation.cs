@@ -13,6 +13,8 @@ public class BlenderAnimation : MonoBehaviour
     private float timer;
 
     [SerializeField] Blending sceneController;
+    [SerializeField] SpriteRenderer blenderSprite;
+    [SerializeField] private Sprite closedBlenderSprite;
 
     private void Awake() {
         state = AnimationState.Idle;
@@ -35,6 +37,8 @@ public class BlenderAnimation : MonoBehaviour
     }
 
     public void StartAnimation() {
+        blenderSprite.sprite = closedBlenderSprite;
+        transform.localScale = new Vector3(0.8f,0.8f,1f);
         state = AnimationState.Shaking;
         timer = 2f;
     }

@@ -9,6 +9,7 @@ public class BowlAnimation : MonoBehaviour
     [SerializeField] private GameObject foodPrefab;
     [SerializeField] private FoodSprites fs;
     public List<FoodType> collectedFood;
+    private int currFood;
 
     private enum AnimationState {
         Turn,
@@ -22,6 +23,7 @@ public class BowlAnimation : MonoBehaviour
 
     private void Awake() {
         state = AnimationState.Idle;
+        currFood = 0;
     }
 
     private void Update() {
@@ -79,7 +81,6 @@ public class BowlAnimation : MonoBehaviour
         newPosition.y += (timer % .25f < 0.12) ? 1f * Time.deltaTime : -1f * Time.deltaTime;
         transform.position = newPosition;
 
-        int currFood = 0;
         if (timer % .15f < 0.01) {
             GameObject food = Instantiate(foodPrefab, foodSpawn.position, Quaternion.identity);
             DroppingFood df = food.GetComponent<DroppingFood>();
