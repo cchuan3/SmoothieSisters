@@ -10,6 +10,9 @@ public class LevelScore : MonoBehaviour
     [SerializeField] private GameObject nextLevel;
     [SerializeField] private GameObject finalScore;
 
+    [SerializeField] private AudioClip[] scoreSounds;
+    [SerializeField] private AudioSource soundPlayer;
+
     private SceneData sd;
 
     public List<FoodType> collectedFood;
@@ -72,6 +75,27 @@ public class LevelScore : MonoBehaviour
         currScore.percentScore = percentScore;
         sd.levelScores[sd.currCustomer] = currScore;
         sd.NextCustomer();
+
+        // Play score sound
+        if (percentScore < 20) {
+            PlaySound(scoreSounds[0]);
+        }
+        else if (percentScore < 40) {
+            PlaySound(scoreSounds[1]);
+        }
+        else if (percentScore < 60) {
+            PlaySound(scoreSounds[2]);
+        }
+        else if (percentScore < 80) {
+            PlaySound(scoreSounds[3]);
+        }
+        else {
+            PlaySound(scoreSounds[4]);
+        }
     }
 
+    private void PlaySound(AudioClip sound) {
+        soundPlayer.clip = sound;
+        soundPlayer.Play();
+    }
 }

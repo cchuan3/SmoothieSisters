@@ -614,6 +614,13 @@ MonoBehaviour:
   stars: {fileID: 2080155447}
   nextLevel: {fileID: 1909715042}
   finalScore: {fileID: 258714584}
+  scoreSounds:
+  - {fileID: 8300000, guid: 06b07204bdb0a477aa0c95cac2c1b665, type: 3}
+  - {fileID: 8300000, guid: 1eafa6e5194164721967aa34ca9efba9, type: 3}
+  - {fileID: 8300000, guid: 23516333aff0c4c1cb3c69e5b7491fcb, type: 3}
+  - {fileID: 8300000, guid: e697c1c483e464054b7ba7274fbed050, type: 3}
+  - {fileID: 8300000, guid: a5df48eb906b24f3ea330ffd7e9fe709, type: 3}
+  soundPlayer: {fileID: 399588494}
   collectedFood: 
 --- !u!4 &294827921
 Transform:
@@ -838,10 +845,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 70fbbfce7a0a14feca02a06a88c2a6ca, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
