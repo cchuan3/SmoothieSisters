@@ -81,7 +81,7 @@ public class BowlAnimation : MonoBehaviour
         newPosition.y += (timer % .25f < 0.12) ? 1f * Time.deltaTime : -1f * Time.deltaTime;
         transform.position = newPosition;
 
-        if (timer % .15f < 0.01) {
+        if (timer % .15f < 0.01 && currFood < collectedFood.Count) {
             GameObject food = Instantiate(foodPrefab, foodSpawn.position, Quaternion.identity);
             DroppingFood df = food.GetComponent<DroppingFood>();
             df.SetType(collectedFood[currFood]);

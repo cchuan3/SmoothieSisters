@@ -7,6 +7,7 @@ public class Blending : MonoBehaviour
 {
     [SerializeField] BowlAnimation bowl;
     [SerializeField] string levelScoreScene = "Level_Complete";
+    [SerializeField] GameObject musicPlayer;
 
     private SceneData sd;
     public List<FoodType> collectedFood;
@@ -14,6 +15,7 @@ public class Blending : MonoBehaviour
     
     private void Awake() {
         sd = GameObject.FindObjectOfType<SceneData>();
+        musicPlayer = GameObject.FindGameObjectWithTag("MusicPlayer");
         collectedFood = sd.collectedFood;
         bowl.collectedFood = collectedFood;
         bowl.StartAnimation();
@@ -23,6 +25,7 @@ public class Blending : MonoBehaviour
     private void Update() {
         if (waiting) {
             if (Input.anyKey) {
+                Destroy(musicPlayer);
                 SceneManager.LoadScene(levelScoreScene);
             }
         }
