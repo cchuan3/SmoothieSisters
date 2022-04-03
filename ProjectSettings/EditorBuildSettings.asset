@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BlendingScene.unity
     guid: 24ed552a401d4d449b14d855c3efcea5
+  - enabled: 1
+    path: Assets/Scenes/HowtoPlay.unity
+    guid: a1fa63dd0c8ae4b909a29fbffd7df988
   m_configObjects: {}

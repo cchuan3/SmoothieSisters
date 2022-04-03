@@ -644,6 +644,7 @@ GameObject:
   - component: {fileID: 305589018}
   - component: {fileID: 305589022}
   - component: {fileID: 305589023}
+  - component: {fileID: 305589024}
   m_Layer: 0
   m_Name: ButtonController
   m_TagString: Untagged
@@ -729,6 +730,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalScoreScene: FinalScoreScene
+--- !u!114 &305589024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305589017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f89394e1cd4464c45baf094aaf819b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenu: TitleScreen
 --- !u!1 &399588490
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,9 +1173,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 305589022}
-        m_TargetAssemblyTypeName: ExitToMenuScript, Assembly-CSharp
-        m_MethodName: ExitToMenu
+      - m_Target: {fileID: 305589024}
+        m_TargetAssemblyTypeName: ExittoMenu2, Assembly-CSharp
+        m_MethodName: exitToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
