@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 517c9d30640c1443c93b46de32c41afc
+guid: 19b76842cd4bc4879a606e3936a630b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4347815269910628448
-    second: Cat Sprite
+      213: 4859863947864962434
+    second: Congratulations text
   - first:
-      213: -1421237971328453690
-    second: Frog Sprite
-  - first:
-      213: -4138164367812369308
-    second: Bird Sprite
+      213: 7644838993549704826
+    second: Level Completed Text
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cat Sprite
+      name: Congratulations text
       rect:
         serializedVersion: 2
-        x: 120
-        y: 385
-        width: 195
-        height: 195
+        x: 22
+        y: 469
+        width: 502
+        height: 168
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,20 +123,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a735f73c0579a3c0800000000000000
-      internalID: -4347815269910628448
+      spriteID: 285f73d0384b17340800000000000000
+      internalID: 4859863947864962434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Frog Sprite
+      name: Level Completed Text
       rect:
         serializedVersion: 2
-        x: 120
-        y: 185
-        width: 171
-        height: 195
+        x: 12
+        y: 357
+        width: 521
+        height: 111
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,29 +144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c3bba9589fb64ce0800000000000000
-      internalID: -1421237971328453690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bird Sprite
-      rect:
-        serializedVersion: 2
-        x: 145
-        y: 0
-        width: 150
-        height: 180
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4646d52be694296c0800000000000000
-      internalID: -4138164367812369308
+      spriteID: a7eb59f7f8ce71a60800000000000000
+      internalID: 7644838993549704826
       vertices: []
       indices: 
       edges: []
