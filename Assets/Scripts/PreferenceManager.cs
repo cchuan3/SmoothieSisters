@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PreferenceManager : MonoBehaviour
 {
+    [SerializeField] private GameObject customerIcon;
+    [SerializeField] private Sprite[] customerSprites;
     [SerializeField] private GameObject[] preferenceIcons;
     private int currPref;
 
@@ -41,5 +43,9 @@ public class PreferenceManager : MonoBehaviour
         foodSprite.sprite = prefSprite;
 
         currPref++;
+    }
+
+    public void setCustomer(int currCustomer) {
+        customerIcon.GetComponent<SpriteRenderer>().sprite = customerSprites[currCustomer];
     }
 }
